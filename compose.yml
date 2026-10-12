@@ -81,7 +81,7 @@ services:
       - borrow_service
 networks:
   myapp:
-    driver: bridge
+    driver: overlay
 volumes:
   mydata:
     
