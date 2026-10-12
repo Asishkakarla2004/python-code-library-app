@@ -2,6 +2,7 @@
 services:
   db:
     container_name: db
+    image: kakarlaasish13/lms:pydb
     ports:
       - "3306:3306"
     networks:
@@ -18,6 +19,7 @@ services:
           memory: 500M
   auth_service:
     container_name: auth_service
+    image: kakarlaasish13/lms:pyauth
     ports:
       - "5001:5001"
     networks:
@@ -34,6 +36,7 @@ services:
       - db
   book_service:
     container_name: book_service
+    image: kakarlaasish13/lms:pybook
     ports:
       - "5002:5002"
     networks:
@@ -48,6 +51,7 @@ services:
           memory: 500M
   borrow_service:
     container_name: borrow_service
+    image: kakarlaasish13/lms:pyborrow
     ports:
       - "5003:5003"
     networks:
@@ -62,6 +66,7 @@ services:
           memory: 500M
   frontend:
     container_name: frontend
+    image: kakarlaasish13/lms:pyfrontend
     ports:
       - "5000:5000"
     networks:
